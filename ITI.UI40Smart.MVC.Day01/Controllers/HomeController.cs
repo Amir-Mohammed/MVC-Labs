@@ -30,8 +30,7 @@ namespace ITI.UI40Smart.MVC.Day01.Controllers
         {
             if (user?.Name == null || user.Email == null || user.Phone == null) return View();
             ViewBag.name = user.Name;
-            ViewBag.attendance = user.Attendance;
-            ViewBag.message = ViewBag.attendance ? "It's great that you are coming" : "We are sorry that you can't come";
+            ViewBag.message = user.Attendance ? "It's great that you are coming" : "We are sorry that you can't come";
             return View("Welcome");
         }
     }
