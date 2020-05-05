@@ -1,0 +1,72 @@
+﻿@model Employee
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <style>
+        .input-validation-error {
+            border-color: red;
+        }
+        .field-validation-error {
+            color: red;
+        }
+        .form-group {
+            display: flex;
+            flex-flow: row wrap;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        input, textarea, select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label>Name</label>
+            @Html.TextBoxFor(e => e.Name) @Html.ValidationMessageFor(e => e.Name)
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            @Html.TextBoxFor(e => e.Email) @Html.ValidationMessageFor(e => e.Email)
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            @Html.PasswordFor(e => e.Password) @Html.ValidationMessageFor(e =>
+                                                   e.Password)
+        </div>
+
+        <div class="form-group">
+            <label>Salary</label>
+            @Html.TextBoxFor(e => e.Salary) @Html.ValidationMessageFor(e => e.Salary)
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            @Html.TextAreaFor(e => e.Address) @Html.ValidationMessageFor(e => e.Address)
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            @Html.EnumDropDownListFor(e => e.Gender) @Html.ValidationMessageFor(e => e.Gender)
+        </div>
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+</body>
+</html>
+
