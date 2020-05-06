@@ -1,7 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
-using ITI.UI40Smart.MVC.Day02.Models;
-using ITI.UI40Smart.MVC.Day02.Models.Entities;
+﻿using System.Web.Mvc;
 
 namespace ITI.UI40Smart.MVC.Day02.Controllers
 {
@@ -13,24 +10,9 @@ namespace ITI.UI40Smart.MVC.Day02.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(Employee employee)
+        public ActionResult About()
         {
-            if (!ModelState.IsValid) return View();
-            var ctx = new ModelContext();
-
-            ctx.Employees.Add(employee);
-            try
-            {
-                ctx.SaveChanges();
-            }
-            catch
-            {
-                ModelState.AddModelError("Email", @"Email is already taken");
-                return View();
-            }
-
-            return View("profile");
+            return View();
         }
     }
 }
